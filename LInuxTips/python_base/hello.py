@@ -1,16 +1,16 @@
-#! python3
+#!/usr/bin/env python3
 """Hello World Multi Languages.
 
-Dependendo da língua configurada no ambiente o programa exibe a mensagem 
+Dependendo da lingua configurada no ambiente o programa exibe a mensagem 
 correspondente.
 
 Como usar:
 
-TEnha a variável LANG devidamente configurada, ex:
+Tenha a variavel LANG devidamente configurada, ex:
 
     export LANG = pt_BR
 
-Execução:
+    Execucao:
 
     python3 hello.py
     ou
@@ -22,13 +22,13 @@ __license__ = "Unlicence"
 
 import os
 
-current_language = "en_US"
+current_language = os.getenv("LANG", "en_US")[:5]
 
 msg = "Hello, World!"
 
 if current_language == "pt_BR":
-    msg = "Olá, Mundo!"
+msg = "Ol├í, Mundo!"
 elif current_language == "it_IT":
-    msg = "Ciao,Mondo!"
+msg = "Ciao,Mondo!"
 
-print(msg)
+print(msg)                        
