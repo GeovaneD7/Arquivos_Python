@@ -16,7 +16,7 @@ Tenha a variavel LANG devidamente configurada, ex:
     ou
     ./hello.py
 """
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 __author__ = "Geovane Dias de Araujo"
 __license__ = "Unlicence"
 
@@ -27,8 +27,12 @@ current_language = os.getenv("LANG", "en_US")[:5]
 msg = "Hello, World!"
 
 if current_language == "pt_BR":
-msg = "Ol├í, Mundo!"
+    msg = "Olá, Mundo!"
 elif current_language == "it_IT":
-msg = "Ciao,Mondo!"
+    msg = "Ciao,Mondo!"
+elif current_language == "es_SP":
+    msg = "Hola, Mundo!"
+elif current_language == "fr_FR":
+    msg = "Bonjour Monde"
 
 print(msg)                        
