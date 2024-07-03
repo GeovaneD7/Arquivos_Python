@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Imprime uma tabuada do 1 ao 10."""
 __version__ = "0.1.2"
-__authon__ = "Geovane Dias"
+__authonr__ = "Geovane Dias"
 
 def tabuada():
     n = int(input("Digite um número inteiro: "))
