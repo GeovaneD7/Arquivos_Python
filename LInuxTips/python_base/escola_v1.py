@@ -5,7 +5,7 @@
 Imprimir a lista de criança agrupadas por sala que frequenta cada uma das atividades.
 """
 __version__ = "0.1.0"
-__author__ = "Bruno"
+__author__ = "Bruno Rocha"
 
 # Dados
 sala1 = ["Erik", "Maia", "Gustavo", "Manuel", "Sofia", "Joana"]
