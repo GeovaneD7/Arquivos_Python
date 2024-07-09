@@ -13,7 +13,7 @@ sala2 = [ "Joao", "Antonio", "Carlos", "Maria", "Isolda"]
 
 aula_ingles = ["Erik", "Maia", "Joana", "Carlos", "Antonio"]
 aula_musica = ["Erik", "Carlos", "Maria"]
-aula_danca = ["Gustavo", "Sofia", "Antonio"]
+aula_danca = ["Gustavo", "Sofia", "Antonio", "Joana"]
 
 atividades = [
     ("Inglês", aula_ingles), 
