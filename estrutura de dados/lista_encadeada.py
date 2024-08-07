@@ -21,22 +21,20 @@ class ListaEncadeada:
         item.next = lista.head  # o head é apontado como próximo item
         lista.head = item       # o item atual se torna o head
     
-    def remove(lista, valor):
+    # Função para remover dados
+    def remove(self, valor):
         # Verifica se o item a ser removido é o head
-        if lista.head and lista.head.data == valor:
-            lista.head = lista.head.next
-            print(f"Nó com valor {valor} removido (era o head da lista)")
+        if self.head and self.head.data == valor:
+            self.head = self.head.next
         else:
+            # Detecta a posição do elemento
             before = None
-            navegar = lista.head
-            # Percorre a lista até encontrar o valor ou chegar ao final
+            navegar = self.head
+            # Navega pela lista para encontrar o elemento
             while navegar and navegar.data != valor:
                 before = navegar
                 navegar = navegar.next
             
-            # Se o nó foi encontrado, 'navegar' não será None
+            # Remove o item se ele for encontrado
             if navegar:
-                before.next = navegar.next  # Pula o nó atual, efetivamente removendo-o
-                print(f"Nó com valor {valor} removido")
-            else:
-                print("Valor não encontrado na lista")
+                before.next = navegar.next

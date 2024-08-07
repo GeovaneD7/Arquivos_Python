@@ -1,48 +1,54 @@
-#resolucao situacao problema
+class ItemLista:
+    # __init__ método construtor da lista
+    # self permite que o método acesse os atributos e outros métodos da instância.
+    # data e nextItem são parâmetros iniciais e finais dessa lista
+    def __init__(self, data=None, nextItem=None):
+        self.data = data
+        self.next = nextItem
+    
+    def __repr__(self):
+        return '%s => %s' % (self.data, self.next)
 
-class Prontuario:
-    def __init__(self, paciente, diagnostico, tratamento, proximo=None):
-        self.paciente = paciente
-        self.diagnostico = diagnostico
-        self.tratamento = tratamento
-        self.proximo = proximo
-
- 
-
-class ListaEncadeadaProntuarios:
+class ListaEncadeada:
     def __init__(self):
-       self.cabeca = None
+        self.head = None
+          
+    def __repr__(self):
+        return "%s" % (self.head)
+    
+    # Função para inserir novos dados
+    def insere(self, data):    
+        item = ItemLista(data)  # cria um objeto para armazenar um novo item da lista 
+        item.next = self.head  # o head é apontado como próximo item
+        self.head = item
+        
+    # Função para remover dados
+    def remove(self, valor):
+        # Verifica se o item a ser removido é o head
+        if self.head and self.head.data == valor:
+            self.head = self.head.next
+        else:
+            # Detecta a posição do elemento
+            before = None
+            navegar = self.head
+            # Navega pela lista para encontrar o elemento
+            while navegar and navegar.data != valor:
+                before = navegar
+                navegar = navegar.next
+            
+            # Remove o item se ele for encontrado
+            if navegar:
+                before.next = navegar.next
 
- 
+# Exemplo de uso
+lista = ListaEncadeada()
+lista.insere(3)
+lista.insere(2)
+lista.insere(1)
+print("Lista após inserções:", lista)
 
-def adicionar_prontuario(self, paciente, diagnostico, tratamento):
-    novo_prontuario = Prontuario(paciente, diagnostico, tratamento, self.cabeca)
-    self.cabeca = novo_prontuario
+lista.remove(2)
+print("Lista após remoção do 2:", lista)
 
- 
-
-def buscar_prontuario(self, nome_paciente):
-    atual = self.cabeca
-    while atual:
-        if atual.paciente == nome_paciente:
-            return atual
-        atual = atual.proximo
-    return None
-
- 
-
-# Uso da lista encadeada para gerenciar prontuários
-
-sistema_prontuarios = ListaEncadeadaProntuarios()
-
-sistema_prontuarios.adicionar_prontuario("Alice Santos", "Diabetes Tipo 2", "Metformina")
-
-sistema_prontuarios.adicionar_prontuario("João Silva", "Hipertensão", "Losartana")
-
-# Adicionar mais prontuários conforme necessário
-
-
-
-# Buscando um prontuário
-
-prontuario_alice = sistema_prontuarios.buscar_prontuario("Alice Santos")
+lista.remove(1)
+print("Lista após remoção do 1:", lista)
