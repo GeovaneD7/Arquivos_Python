@@ -14,4 +14,4 @@ print(lista)
 
 le.ListaEncadeada.remove(lista, "abobrinha")
 
-print("Conteúdo da lista deletada: "), lista
+print("Conteúdo da lista deletada: ", lista)
