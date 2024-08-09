@@ -8,7 +8,7 @@ direcao = {
     4: "Leste - L ➡️",
     5: "Noroeste - NO ↖️",
     6: "Nordeste - NE ↗️",
-    7: "Sul - S ↙️"
+    7: "Sul - S ⬇️"
 }
 
 dado = random.randint(0, 7)
